@@ -1,0 +1,133 @@
+/* Taọ 1 befor để dành cho li để thực hiện tọa thanh màu xanh nằm ngang trên giao diện  */
+header .navbar-collapse .nav-item {
+  position: relative;
+  margin-right: 25px;
+}
+
+header .navbar-collapse .nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: green;
+  transition: all 0.5s;
+}
+header .navbar-collapse .nav-item:hover::before {
+  width: 100%;
+}
+header .navbar-collapse .nav-item:hover a {
+  color: green !important;
+}
+header .navbar-collapse .active a {
+  color: green !important;
+}
+header .navbar-collapse .active::before {
+  width: 100%;
+}
+
+/* carousel css  */
+/* .carousel_text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(39, 43, 54, 0.5);
+} */
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(39, 43, 54, 0.5);
+}
+.carousel_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+.carousel_text img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* project css  */
+.cyber_project .nav-item .active {
+  background-color: green;
+  border-color: green !important;
+  color: white !important;
+}
+
+.cyber_project_content .project_item .text_project {
+  border: 3px solid transparent;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  transition: all 0.5s;
+}
+
+.cyber_project_content .project_item:hover .text_project {
+  border-color: green;
+}
+.cyber_project_content .project_item:hover h3 {
+  color: green;
+}
+
+.demo_animate {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  animation-name: demo-animate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes demo-animate {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(300px, 0);
+  }
+  50% {
+    transform: translate(300px, 300px);
+  }
+  75% {
+    transform: translate(0, 300px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* nếu ở mh đt thì chữ màu cam còn tablet và desktop thì chữ vẫn màu trắng  */
+
+@media screen and (max-width: 576px) {
+  header .navbar-brand span {
+    color: orange !important;
+  }
+}
+
+/* ở title của phần caurosel nếu ở mobie 576px thì điều chỉnh màu đỏ còn nếu ở vùng từ 576-992px thì chỉnh màu cam còn lại destop thì vẫn màu trắng  */
+@media screen and (max-width: 576px) {
+  .carousel_text h2 {
+    color: red;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 576px) {
+  .carousel_text h2 {
+    color: orange;
+  }
+}
